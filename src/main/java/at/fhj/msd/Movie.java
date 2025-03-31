@@ -14,6 +14,11 @@ public class Movie {
 
     }
 
+    public Movie(String title, int length) {
+        this.title = title;
+        this.length = length;
+    }
+
     
     
 }
