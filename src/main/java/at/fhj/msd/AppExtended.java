@@ -8,8 +8,8 @@ public class AppExtended {
 
     public static void main(String[] args) {
 
-        Hall largeHall = new Hall(10, 12);
-        Hall smallHall = new Hall(6, 9);
+        Hall largeHall = new Hall("Hall-1", 10, 12);
+        Hall smallHall = new Hall("Hall-2",6, 9);
 
         Movie antMan = new Movie("Ant-Man and the Wasp: Quantumania", 122, 12);
         Movie magicMike = new Movie("Magic Mike The Last Dance", 113);
@@ -28,10 +28,10 @@ public class AppExtended {
 
         while (status) {
 
-            
             System.out.printf("[L]ist shows\n[s]how available seats for show\n[b]uy a ticket for a show\n");
 
             String choice = input.nextLine();
+            
             if (choice.equalsIgnoreCase("q")) {
                 status = false;
             }
@@ -40,13 +40,14 @@ public class AppExtended {
 
             if (choice.equalsIgnoreCase("l")) {
                 for (Show s : shows) {
-                    System.out.printf("Show %d --> Price: %d; Movie: %s; Hall: %s; Start-Time: %d", count, s.basePrice, s.movie.title, s.hall, s.startTime);
+                    System.out.printf("Show %d --> Price: %d; Movie: %s; Hall: %s; Start-Time: %d\n", count, s.basePrice, s.movie.title, s.hall.name, s.startTime);
                     count++;
                 }
             }
             if (choice.equalsIgnoreCase("s")) {
                 System.out.printf("Of which show do you wanna see the free seats? (Integer): ");
                 int whichShow = input.nextInt();
+                input.nextLine(); //clear Scanner Buffer
                 shows[whichShow - 1].printSeatPlan();
 
             }
@@ -54,6 +55,7 @@ public class AppExtended {
                 try {
                     System.out.printf("\nFor which show? (Integer): ");
                     int whichShowTicket = input.nextInt();
+                    input.nextLine(); //clear Scanner Buffer
                     System.out.printf("\nWhich row and seat? (Seperate it with space): ");
                     String rowAndSeat = input.nextLine();
                     String[] parts = rowAndSeat.split(" ");
@@ -62,6 +64,8 @@ public class AppExtended {
                 } catch (IllegalArgumentException e) {
                     System.out.println("could not book ticket");
                 }
+            } else {
+                System.out.println("Couldn't understand your instruction");
             }
 
         }
