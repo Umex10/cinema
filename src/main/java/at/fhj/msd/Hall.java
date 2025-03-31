@@ -2,8 +2,8 @@ package at.fhj.msd;
 
 public class Hall {
 
-    private int rows;
-    private int seatsPerRow;
+    protected int rows;
+    protected int seatsPerRow;
 
 
     public Hall(int rows, int seatsPerRow) {

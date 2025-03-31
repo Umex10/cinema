@@ -2,9 +2,9 @@ package at.fhj.msd;
 
 public class Movie {
 
-    private String title;
-    private int length;
-    private int rating;
+    protected String title;
+    protected int length;
+    protected int rating;
 
     public Movie(String title, int length, int rating) {
 
