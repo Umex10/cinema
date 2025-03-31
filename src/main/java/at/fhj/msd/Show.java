@@ -1,5 +1,7 @@
 package at.fhj.msd;
 
+import java.util.Random;
+
 public class Show {
 
     protected int basePrice;
@@ -51,4 +53,31 @@ public class Show {
             System.out.println();
         }
     }
+
+    public int getFreeSeats() {
+        int count = 0;
+        for (boolean[] row: this.seats) {
+            for (boolean col: row) {
+                if (!col) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    static Random rnd = new Random();
+
+    public double buyTicket(int row, int seat) {
+       
+       if (!this.seats[row][seat]) {
+        this.seats[row][seat] = true;
+        return this.calcTicketPrice(row);
+       }
+       throw new IllegalArgumentException("seat already taken");
+       
+
+        
+    }
+
 }
