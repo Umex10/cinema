@@ -6,12 +6,15 @@ public class Show {
     protected Movie movie;
     protected Hall hall;
     protected int StartTime;
+    protected boolean[][] seats;
 
     public Show(int basePrice, Movie movie, Hall hall, int StartTime) {
         this.basePrice = basePrice;
         this.movie = movie;
         this.hall = hall;
         this.StartTime = StartTime;
+
+        this.seats = new boolean[this.hall.rows][this.hall.seatsPerRow];
     }
 
     public int calcTicketPrice(int row) {
