@@ -19,6 +19,13 @@ public class Show {
         this.seats = new boolean[this.hall.rows][this.hall.seatsPerRow];
     }
 
+    public Show(Movie movie, Hall hall, int startTime) {
+        this.movie = movie;
+        this.hall = hall;
+        this.startTime = startTime;
+    }
+
+
     public int calcTicketPrice(int row) {
 
         int fullPrice = this.basePrice;
@@ -75,8 +82,6 @@ public class Show {
         return this.calcTicketPrice(row);
        }
        throw new IllegalArgumentException("seat already taken");
-       
-
         
     }
 

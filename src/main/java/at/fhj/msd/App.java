@@ -11,7 +11,16 @@ public class App {
         Movie magicMike = new Movie("Magic Mike The Last Dance", 113);
         Movie titanic = new Movie("Titanic", 192, 12);
     
-       
+        Show show1 = new Show(antMan, largeHall, 1630);
+        Show show2 = new Show(magicMike, smallHall, 1645);
+        Show show3 = new Show(titanic, largeHall, 1900);
+        Show show4 = new Show(titanic, smallHall, 1900);
+    
+        Show[] shows = {show1, show2, show3, show4};
+    
+    
+        
+    
     
        
     }
