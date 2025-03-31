@@ -4,7 +4,8 @@ package at.fhj.msd;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("Servus");
+        Movie m1 = new Movie("App", 120, 10);
+        
        
     }
 }
