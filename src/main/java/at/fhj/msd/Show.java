@@ -2,10 +2,10 @@ package at.fhj.msd;
 
 public class Show {
 
-    private int basePrice; 
-    private Movie movie;
-    private Hall hall;
-    private int StartTime;
+    protected int basePrice; 
+    protected Movie movie;
+    protected Hall hall;
+    protected int StartTime;
 
     public Show(int basePrice, Movie movie, Hall hall, int StartTime) {
         this.basePrice = basePrice;
@@ -13,5 +13,6 @@ public class Show {
         this.hall = hall;
         this.StartTime = StartTime;
     }
-    
+
+ 
 }
